@@ -4,15 +4,15 @@
   "base_version": "5.5.62",
   "has_update": true,
   "update_required": false,
-  "minimum_app_version": "5.5.62",
+  "minimum_app_version": "5.5.60",
   "latest": {
     "version": "5.5.63",
     "release_name": "Atualizador visual e reinicialização automática",
-    "release_notes": "• O botão ATUALIZAR AGORA agora possui um pacote real e clicável.\n• Animação de carregamento durante download, verificação e preparação.\n• Janela visual continua mostrando o progresso enquanto o painel é recompilado.\n• Ao concluir, o RustyX reinicia automaticamente já na nova versão.\n• A tela é recarregada e uma notificação confirma a atualização.\n• Em caso de falha, o executável e a base anteriores são restaurados automaticamente.",
+    "release_notes": "• O botão ATUALIZAR AGORA agora possui um pacote real e clicável.\n• Animação de carregamento durante download, verificação e preparação.\n• Janela visual continua mostrando o progresso enquanto o painel é recompilado.\n• Ao concluir, o RustyX reinicia automaticamente já na nova versão.\n• A tela é recarregada e uma notificação confirma a atualização.\n• Em caso de falha, o executável e a base anteriores são restaurados automaticamente.\n• Esta atualização automática usa como base a instalação 5.5.62.",
     "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/rustyx-5.5.63.patch.bin",
     "file_sha256": "EB9F12D156B997FB56C7B4B5A1DD70188CF8ABD1F95EB1588C347B410B0994D0",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-05T17:20:00Z"
+    "released_at": "2026-08-05T17:40:00Z"
   }
 }
