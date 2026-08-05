@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "channel": "stable",
+  "base_version": "5.5.59",
+  "has_update": false,
+  "update_required": false,
+  "minimum_app_version": "5.5.59",
+  "latest": {
+    "version": "5.5.59",
+    "release_name": "Central automática de atualizações",
+    "release_notes": "• Sininho fixo na Home com indicador de nova versão.\n• Histórico das modificações e melhorias dentro do painel.\n• Verificação automática a cada 2 minutos.\n• Download e instalação sem abrir navegador.\n• Canal protegido por HTTPS, SHA-256 e patches criptografados.\n• Restauração automática da versão anterior se uma atualização falhar.",
+    "package_type": "source_patch",
+    "mandatory": false,
+    "released_at": "2026-08-05T15:45:00Z"
+  }
+}
