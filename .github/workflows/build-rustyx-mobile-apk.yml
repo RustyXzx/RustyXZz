@@ -1,0 +1,390 @@
+name: Build RustyX Mobile APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["rustyx-mobile-apk"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Create Android project
+        shell: bash
+        run: |
+          mkdir -p mobile/app/src/main/java/com/rustyx/mobile
+          mkdir -p mobile/app/src/main/res/values
+          mkdir -p mobile/app/src/main/res/drawable
+
+          cat > mobile/settings.gradle <<'EOF'
+          pluginManagement {
+              repositories { google(); mavenCentral(); gradlePluginPortal() }
+          }
+          dependencyResolutionManagement {
+              repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+              repositories { google(); mavenCentral() }
+          }
+          rootProject.name = "RustyXMobile"
+          include ':app'
+          EOF
+
+          cat > mobile/build.gradle <<'EOF'
+          plugins {
+              id 'com.android.application' version '8.7.3' apply false
+          }
+          EOF
+
+          cat > mobile/gradle.properties <<'EOF'
+          org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+          android.useAndroidX=true
+          android.nonTransitiveRClass=true
+          EOF
+
+          cat > mobile/app/build.gradle <<'EOF'
+          plugins { id 'com.android.application' }
+
+          android {
+              namespace 'com.rustyx.mobile'
+              compileSdk 35
+
+              defaultConfig {
+                  applicationId 'com.rustyx.mobile'
+                  minSdk 24
+                  targetSdk 35
+                  versionCode 2
+                  versionName '0.2.0-test'
+              }
+
+              buildTypes {
+                  debug {
+                      applicationIdSuffix '.test'
+                      versionNameSuffix '-debug'
+                  }
+                  release {
+                      minifyEnabled false
+                      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                  }
+              }
+
+              compileOptions {
+                  sourceCompatibility JavaVersion.VERSION_17
+                  targetCompatibility JavaVersion.VERSION_17
+              }
+          }
+          EOF
+
+          cat > mobile/app/proguard-rules.pro <<'EOF'
+          -keep class com.rustyx.mobile.** { *; }
+          EOF
+
+          cat > mobile/app/src/main/res/values/colors.xml <<'EOF'
+          <resources>
+              <color name="black">#050505</color>
+              <color name="white">#F5F5F5</color>
+          </resources>
+          EOF
+
+          cat > mobile/app/src/main/res/values/strings.xml <<'EOF'
+          <resources>
+              <string name="app_name">RustyX Mobile</string>
+          </resources>
+          EOF
+
+          cat > mobile/app/src/main/res/values/themes.xml <<'EOF'
+          <resources>
+              <style name="Theme.RustyX" parent="android:style/Theme.Material.Light.NoActionBar">
+                  <item name="android:fontFamily">sans</item>
+                  <item name="android:windowNoTitle">true</item>
+                  <item name="android:colorAccent">#FFFFFF</item>
+                  <item name="android:navigationBarColor">#050505</item>
+                  <item name="android:statusBarColor">#050505</item>
+                  <item name="android:windowLightStatusBar">false</item>
+                  <item name="android:windowLightNavigationBar">false</item>
+                  <item name="android:windowBackground">#050505</item>
+              </style>
+          </resources>
+          EOF
+
+          cat > mobile/app/src/main/res/drawable/ic_launcher.xml <<'EOF'
+          <vector xmlns:android="http://schemas.android.com/apk/res/android"
+              android:width="108dp" android:height="108dp"
+              android:viewportWidth="108" android:viewportHeight="108">
+              <path android:fillColor="#050505" android:pathData="M0,0h108v108h-108z"/>
+              <path android:fillColor="#F4F4F5" android:pathData="M22,21 L69,21 C83,21 91,29 91,42 C91,53 85,60 75,63 L92,87 L75,87 L58,65 L48,65 L48,87 L31,87 L31,38 L48,38 L48,51 L67,51 C72,51 75,48 75,43 C75,38 72,35 67,35 L31,35 Z"/>
+              <path android:fillColor="#8E8E93" android:pathData="M22,21 L31,35 L31,87 L22,87 Z"/>
+          </vector>
+          EOF
+
+          cat > mobile/app/src/main/AndroidManifest.xml <<'EOF'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+              <uses-permission android:name="android.permission.INTERNET" />
+              <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+              <application
+                  android:allowBackup="false"
+                  android:icon="@drawable/ic_launcher"
+                  android:roundIcon="@drawable/ic_launcher"
+                  android:label="RustyX Mobile"
+                  android:supportsRtl="true"
+                  android:theme="@style/Theme.RustyX">
+                  <activity android:name=".MainActivity" android:exported="true">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
+                  </activity>
+              </application>
+          </manifest>
+          EOF
+
+          cat > mobile/app/src/main/java/com/rustyx/mobile/MainActivity.java <<'EOF'
+          package com.rustyx.mobile;
+
+          import android.app.Activity;
+          import android.app.ActivityManager;
+          import android.content.Context;
+          import android.content.Intent;
+          import android.graphics.Color;
+          import android.graphics.Typeface;
+          import android.net.ConnectivityManager;
+          import android.net.Network;
+          import android.net.NetworkCapabilities;
+          import android.os.BatteryManager;
+          import android.os.Bundle;
+          import android.os.Environment;
+          import android.os.StatFs;
+          import android.provider.Settings;
+          import android.view.Gravity;
+          import android.view.View;
+          import android.widget.Button;
+          import android.widget.LinearLayout;
+          import android.widget.ScrollView;
+          import android.widget.TextView;
+          import android.widget.Toast;
+
+          import java.io.File;
+          import java.util.Locale;
+
+          public final class MainActivity extends Activity {
+              private LinearLayout root;
+              private TextView statusText;
+              private TextView memoryText;
+              private TextView storageText;
+              private TextView batteryText;
+              private TextView networkText;
+              private TextView cacheText;
+
+              @Override
+              protected void onCreate(Bundle savedInstanceState) {
+                  super.onCreate(savedInstanceState);
+                  getWindow().setStatusBarColor(Color.rgb(5, 5, 5));
+                  getWindow().setNavigationBarColor(Color.rgb(5, 5, 5));
+                  buildUi();
+                  refreshStatus();
+              }
+
+              private int dp(int value) {
+                  return Math.round(value * getResources().getDisplayMetrics().density);
+              }
+
+              private TextView label(String text, int size, int color, boolean bold) {
+                  TextView view = new TextView(this);
+                  view.setText(text);
+                  view.setTextSize(size);
+                  view.setTextColor(color);
+                  view.setTypeface(Typeface.DEFAULT, bold ? Typeface.BOLD : Typeface.NORMAL);
+                  return view;
+              }
+
+              private LinearLayout card(String title, TextView value) {
+                  LinearLayout card = new LinearLayout(this);
+                  card.setOrientation(LinearLayout.VERTICAL);
+                  card.setPadding(dp(18), dp(16), dp(18), dp(16));
+                  card.setBackgroundColor(Color.rgb(18, 18, 20));
+                  LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-1, -2);
+                  params.setMargins(0, 0, 0, dp(10));
+                  card.setLayoutParams(params);
+                  card.addView(label(title, 12, Color.rgb(150,150,158), true));
+                  LinearLayout.LayoutParams valueParams = new LinearLayout.LayoutParams(-1, -2);
+                  valueParams.topMargin = dp(6);
+                  value.setLayoutParams(valueParams);
+                  card.addView(value);
+                  return card;
+              }
+
+              private Button action(String text, View.OnClickListener listener) {
+                  Button button = new Button(this);
+                  button.setText(text);
+                  button.setTextColor(Color.WHITE);
+                  button.setTextSize(13);
+                  button.setAllCaps(false);
+                  button.setBackgroundColor(Color.rgb(25,25,28));
+                  button.setOnClickListener(listener);
+                  LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(-1, dp(54));
+                  p.setMargins(0, 0, 0, dp(10));
+                  button.setLayoutParams(p);
+                  return button;
+              }
+
+              private void buildUi() {
+                  ScrollView scroll = new ScrollView(this);
+                  scroll.setBackgroundColor(Color.rgb(5,5,5));
+                  root = new LinearLayout(this);
+                  root.setOrientation(LinearLayout.VERTICAL);
+                  root.setPadding(dp(18), dp(22), dp(18), dp(30));
+                  scroll.addView(root);
+
+                  TextView brand = label("RUSTYX", 30, Color.WHITE, true);
+                  brand.setGravity(Gravity.CENTER_HORIZONTAL);
+                  root.addView(brand);
+
+                  TextView subtitle = label("Mobile Optimizer", 13, Color.rgb(150,150,158), false);
+                  subtitle.setGravity(Gravity.CENTER_HORIZONTAL);
+                  LinearLayout.LayoutParams subtitleParams = new LinearLayout.LayoutParams(-1, -2);
+                  subtitleParams.setMargins(0, dp(2), 0, dp(22));
+                  subtitle.setLayoutParams(subtitleParams);
+                  root.addView(subtitle);
+
+                  statusText = label("Analisando aparelho...", 14, Color.WHITE, true);
+                  memoryText = label("--", 20, Color.WHITE, true);
+                  storageText = label("--", 20, Color.WHITE, true);
+                  batteryText = label("--", 20, Color.WHITE, true);
+                  networkText = label("--", 20, Color.WHITE, true);
+                  cacheText = label("--", 20, Color.WHITE, true);
+
+                  root.addView(card("STATUS", statusText));
+                  root.addView(card("MEMÓRIA DISPONÍVEL", memoryText));
+                  root.addView(card("ARMAZENAMENTO LIVRE", storageText));
+                  root.addView(card("BATERIA", batteryText));
+                  root.addView(card("REDE", networkText));
+                  root.addView(card("CACHE DO RUSTYX", cacheText));
+
+                  TextView actionsTitle = label("Ferramentas de otimização", 17, Color.WHITE, true);
+                  LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(-1, -2);
+                  titleParams.setMargins(0, dp(16), 0, dp(12));
+                  actionsTitle.setLayoutParams(titleParams);
+                  root.addView(actionsTitle);
+
+                  root.addView(action("Otimização rápida do RustyX", v -> optimizeOwnApp()));
+                  root.addView(action("Abrir limpeza de armazenamento", v -> open(Settings.ACTION_INTERNAL_STORAGE_SETTINGS)));
+                  root.addView(action("Abrir economia de bateria", v -> open(Settings.ACTION_BATTERY_SAVER_SETTINGS)));
+                  root.addView(action("Abrir informações do aplicativo", v -> {
+                      Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                      intent.setData(android.net.Uri.parse("package:" + getPackageName()));
+                      startActivity(intent);
+                  }));
+                  root.addView(action("Atualizar diagnóstico", v -> refreshStatus()));
+
+                  TextView warning = label("O Android não permite que um aplicativo comum encerre outros apps ou apague o cache deles. O RustyX usa apenas ações permitidas, sem root e sem promessas falsas.", 12, Color.rgb(145,145,152), false);
+                  warning.setLineSpacing(0, 1.25f);
+                  LinearLayout.LayoutParams warningParams = new LinearLayout.LayoutParams(-1, -2);
+                  warningParams.setMargins(0, dp(12), 0, 0);
+                  warning.setLayoutParams(warningParams);
+                  root.addView(warning);
+
+                  setContentView(scroll);
+              }
+
+              private void refreshStatus() {
+                  ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+                  ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
+                  if (manager != null) manager.getMemoryInfo(info);
+
+                  StatFs storage = new StatFs(Environment.getDataDirectory().getPath());
+                  BatteryManager battery = (BatteryManager) getSystemService(BATTERY_SERVICE);
+                  int percent = battery == null ? -1 : battery.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+
+                  statusText.setText(info.lowMemory ? "Atenção: pouca memória disponível" : "Aparelho em condição normal");
+                  statusText.setTextColor(info.lowMemory ? Color.rgb(255,95,100) : Color.rgb(70,215,125));
+                  memoryText.setText(formatBytes(info.availMem) + " de " + formatBytes(info.totalMem));
+                  storageText.setText(formatBytes(storage.getAvailableBytes()) + " de " + formatBytes(storage.getTotalBytes()));
+                  batteryText.setText(percent < 0 ? "Não disponível" : percent + "%");
+                  networkText.setText(isOnline() ? "Conectado à internet" : "Sem conexão");
+                  cacheText.setText(formatBytes(directorySize(getCacheDir())));
+              }
+
+              private boolean isOnline() {
+                  ConnectivityManager cm = getSystemService(ConnectivityManager.class);
+                  if (cm == null) return false;
+                  Network network = cm.getActiveNetwork();
+                  if (network == null) return false;
+                  NetworkCapabilities capabilities = cm.getNetworkCapabilities(network);
+                  return capabilities != null && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
+              }
+
+              private void optimizeOwnApp() {
+                  long before = directorySize(getCacheDir());
+                  boolean success = deleteChildren(getCacheDir());
+                  onTrimMemory(TRIM_MEMORY_COMPLETE);
+                  System.gc();
+                  refreshStatus();
+                  String result = before > 0 ? formatBytes(before) + " liberados" : "O cache já estava limpo";
+                  Toast.makeText(this, success ? result : "A limpeza não foi concluída", Toast.LENGTH_LONG).show();
+              }
+
+              private void open(String action) {
+                  try { startActivity(new Intent(action)); }
+                  catch (Exception error) { startActivity(new Intent(Settings.ACTION_SETTINGS)); }
+              }
+
+              private long directorySize(File file) {
+                  if (file == null || !file.exists()) return 0;
+                  if (file.isFile()) return file.length();
+                  long total = 0;
+                  File[] children = file.listFiles();
+                  if (children != null) for (File child : children) total += directorySize(child);
+                  return total;
+              }
+
+              private boolean deleteChildren(File directory) {
+                  if (directory == null || !directory.exists()) return true;
+                  boolean success = true;
+                  File[] children = directory.listFiles();
+                  if (children != null) {
+                      for (File child : children) {
+                          if (child.isDirectory()) success &= deleteChildren(child);
+                          success &= child.delete();
+                      }
+                  }
+                  return success;
+              }
+
+              private String formatBytes(long bytes) {
+                  if (bytes < 1024) return bytes + " B";
+                  double value = bytes;
+                  String[] units = {"KB", "MB", "GB", "TB"};
+                  int unit = -1;
+                  do { value /= 1024.0; unit++; } while (value >= 1024 && unit < units.length - 1);
+                  return String.format(Locale.getDefault(), "%.1f %s", value, units[unit]);
+              }
+          }
+          EOF
+
+      - name: Build APK
+        working-directory: mobile
+        run: gradle --no-daemon :app:assembleDebug
+
+      - name: Rename APK
+        run: cp mobile/app/build/outputs/apk/debug/app-debug.apk RustyX-Mobile-Optimizer-Teste.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RustyX-Mobile-Optimizer-APK
+          path: RustyX-Mobile-Optimizer-Teste.apk
