@@ -1,16 +1,16 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.60",
+  "base_version": "5.5.61",
   "has_update": false,
   "update_required": false,
-  "minimum_app_version": "5.5.60",
+  "minimum_app_version": "5.5.61",
   "latest": {
-    "version": "5.5.60",
-    "release_name": "Correção de compilação do diagnóstico de rede",
-    "release_notes": "• Corrigido o erro CS0103 em AdvancedFeatures.cs.\n• A resolução DNS agora usa System.Net.Dns de forma explícita.\n• Mantidos o sininho fixo, o histórico de melhorias e o atualizador automático.\n• Base protegida do atualizador atualizada para a versão 5.5.60.",
+    "version": "5.5.61",
+    "release_name": "Correção da base do atualizador automático",
+    "release_notes": "• Corrigido o erro ao salvar base.core.bin durante a finalização.\n• A base do atualizador agora é copiada antes da compilação, com três tentativas e gravação atômica.\n• O SHA-256 da cópia é verificado antes de liberar o atualizador.\n• A instalação do painel não é mais bloqueada caso a preparação da base precise ser repetida.\n• O .NET SDK portátil é preservado quando for necessário para atualizações futuras.",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-05T16:12:00Z"
+    "released_at": "2026-08-05T16:25:00Z"
   }
 }
