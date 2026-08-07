@@ -7,12 +7,12 @@
   "minimum_app_version": "5.5.60",
   "latest": {
     "version": "5.5.76",
-    "release_name": "Game Mode corrigido e feedback visível no modo escuro",
-    "release_notes": "• O carregamento de Diagnóstico e outras operações agora fica visível no modo escuro.\n• O Game Mode usa o launcher correto para VALORANT, Steam/CS2 e Epic/Fortnite quando disponível.\n• Executáveis detectados são validados com regras específicas por jogo para reduzir seleção incorreta.\n• O diretório de trabalho do jogo passa a ser o diretório real do executável, evitando erros de acesso e inicialização.\n• A atualização continua automática ao entrar e a cada 1 minuto quando existe pacote seguro publicado.\n• Mantidos login automático da key, contador ao vivo, Home FREE, janela móvel e sininho.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/rustyx-5.5.76.patch.bin",
-    "file_sha256": "1D781E2A096CAE1CB290BAADBD640EBABA9A811CCF7BAEB2E6855642FB50D6D3",
-    "package_type": "source_patch",
+    "release_name": "Game Mode corrigido + reparo do atualizador",
+    "release_notes": "• Corrigido o erro de ACESSO NEGADO ao atualizar a base local do RustyX.\n• A atualização da 5.5.75 agora usa um instalador de reparo elevado e não sobrescreve a base que pode estar em uso.\n• A nova base passa a ser versionada e ativada por um ponteiro atômico, reduzindo bloqueios em futuras atualizações.\n• A janela externa da atualização agora respeita o modo escuro, sem card branco.\n• O carregamento de Diagnóstico e outras operações fica visível no modo escuro.\n• Game Mode usa launchers corretos para VALORANT, Steam/CS2 e Epic/Fortnite quando disponíveis e valida melhor os executáveis.\n• O sininho e a verificação automática continuam ativos.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/RustyX_5.5.76_AUTO_REPAIR_INSTALLER.zip",
+    "file_sha256": "5081DA391D1D1279207D87033921D3D30FC0B1E4BC4CEB3D8EEFE80FB76A1D09",
+    "package_type": "installer_zip",
     "mandatory": false,
-    "released_at": "2026-08-07T06:10:00Z"
+    "released_at": "2026-08-07T06:28:00Z"
   }
 }
