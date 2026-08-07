@@ -9,10 +9,10 @@
     "version": "5.5.78",
     "release_name": "Login com Discord + perfil no painel",
     "release_notes": "• Adicionado login/conexão com Discord via OAuth2 usando o Application ID oficial do RustyX.\n• O perfil conectado aparece no canto inferior direito com nome, @usuário e avatar.\n• Avatares GIF do Discord são animados dentro do RustyX.\n• A sessão do Discord é protegida localmente pelo Windows e restaurada automaticamente enquanto válida.\n• O Discord identifica o usuário, mas o plano FREE/PRO continua sendo validado separadamente.\n• O login respeita o tema escuro e o canal resiliente de atualização/sininho permanece ativo.\n• Para ativar o OAuth no aplicativo Discord, registre o Redirect URI exato: http://127.0.0.1:47815/discord-callback/",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/432c22d3ec41441342fc796d90e8a57bd71a43ae/updates/packages/rustyx-5.5.78.patch.bin",
-    "file_sha256": "E3D3AA577B36CB37A02E0637B8386E1010C444C8A68FD23941187999AF4E038B",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/6f935c371d34acc4e58f4962084351ea2144bf07/updates/packages/rustyx-5.5.78-r28.patch.bin",
+    "file_sha256": "F171798D6EFD91F49D24D1ED66C829EEA5E04A6D98DC02913D015AE252825FBE",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T07:46:00Z"
+    "released_at": "2026-08-07T08:05:00Z"
   }
 }
