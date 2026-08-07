@@ -1,16 +1,16 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.67",
+  "base_version": "5.5.69",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.68",
-    "release_name": "Home FREE e central de atualizações no sininho",
-    "release_notes": "• A Home agora é liberada para usuários do plano FREE.\n• Usuários FREE entram diretamente na Home; recursos PRO continuam bloqueados individualmente ao clicar.\n• O sininho de atualizações fica fixo e sempre visível na barra lateral, sem borda.\n• Toda nova versão publicada no canal oficial acende a bolinha do sininho.\n• As novidades da versão instalada também ficam no sininho até serem visualizadas.\n• O painel verifica backend e manifesto público automaticamente a cada 2 minutos.\n• O sininho abre a central do RustyX com versão e notas da atualização.",
+    "version": "5.5.69",
+    "release_name": "Correção do instalador R18 e central de atualizações",
+    "release_notes": "• Corrigida a validação de integridade do pacote protegido R18.\n• Corrigido o conflito de variável que impedia a compilação da central de atualizações.\n• Removida a dependência de ServiceController que quebrava o build em instalações isoladas.\n• A Home permanece liberada para usuários FREE.\n• O sininho continua fixo na barra lateral e exibe as novidades da versão instalada.\n• Novas versões publicadas no canal oficial continuam sendo detectadas automaticamente pelo sininho.",
     "package_type": "protected_release",
     "mandatory": false,
-    "released_at": "2026-08-07T03:52:00Z"
+    "released_at": "2026-08-07T04:05:00Z"
   }
 }
