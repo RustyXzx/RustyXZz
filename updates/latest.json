@@ -6,13 +6,13 @@
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.84",
-    "release_name": "Discord Desktop automático",
-    "release_notes": "• O botão Discord agora tenta usar primeiro a conta que já está aberta no Discord Desktop.\n• Quando o cliente Discord está aberto, o RustyX lê a identidade pelo IPC oficial local e não abre o navegador.\n• O navegador OAuth fica apenas como fallback quando o Discord Desktop não está disponível.\n• A identidade detectada fica salva localmente e o perfil continua aparecendo automaticamente.\n• O painel permanece somente no tema branco.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/ec735515d5ceddf695bd0bd400807a8addf00593/updates/packages/rustyx-5.5.84.patch.bin",
-    "file_sha256": "8334C5C624152EFD94A1230E2A0EF9F2C253D652FFE7BD3285B2F5D13F31FFB3",
+    "version": "5.5.85",
+    "release_name": "Correção de compilação + Discord Desktop",
+    "release_notes": "• Corrigido o erro de compilação da R34 causado pelas notas de versão em múltiplas linhas.\n• Mantida a detecção da conta aberta no Discord Desktop.\n• O navegador OAuth continua apenas como fallback quando o Discord Desktop não estiver disponível.\n• O painel permanece somente no tema branco.\n• O sininho continua verificando atualizações automaticamente.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/02f6ed9295105038e80fd6f3feaa067f84edc884/updates/packages/rustyx-5.5.85.patch.bin",
+    "file_sha256": "FC1C98C8F0639C1FA1A95167E99E8CEFFC9F4728037553D181F379CCB0F0433F",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T17:31:00-03:00"
+    "released_at": "2026-08-07T17:44:00-03:00"
   }
 }
