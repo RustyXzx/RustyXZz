@@ -1,18 +1,18 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.75",
+  "base_version": "5.5.76",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.76",
-    "release_name": "Game Mode corrigido + reparo do atualizador",
-    "release_notes": "• Corrigido o erro de ACESSO NEGADO ao atualizar a base local do RustyX.\n• A atualização da 5.5.75 agora usa um instalador de reparo elevado e não sobrescreve a base que pode estar em uso.\n• A nova base passa a ser versionada e ativada por um ponteiro atômico, reduzindo bloqueios em futuras atualizações.\n• A janela externa da atualização agora respeita o modo escuro, sem card branco.\n• O carregamento de Diagnóstico e outras operações fica visível no modo escuro.\n• Game Mode usa launchers corretos para VALORANT, Steam/CS2 e Epic/Fortnite quando disponíveis e valida melhor os executáveis.\n• O sininho e a verificação automática continuam ativos.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/RustyX_5.5.76_AUTO_REPAIR_INSTALLER.zip",
-    "file_sha256": "5081DA391D1D1279207D87033921D3D30FC0B1E4BC4CEB3D8EEFE80FB76A1D09",
-    "package_type": "installer_zip",
+    "version": "5.5.77",
+    "release_name": "Login escuro + canal de atualização resiliente",
+    "release_notes": "• O login agora respeita totalmente o tema preto, incluindo fundo, card, campos, textos e logo.\n• No tema escuro, a animação clara do login é substituída pela marca RustyX própria para fundo preto.\n• A verificação de atualização usa backend + três fontes públicas, cache-bust, duas tentativas por fonte e cache local da última resposta válida.\n• A checagem ocorre imediatamente após o login e automaticamente a cada 1 minuto.\n• Se houver pacote seguro, a atualização automática continua ativa; em falha, o sininho permanece disponível para nova tentativa.\n• Mantidos Game Mode corrigido, atualizador reparado, Home FREE, contador da key e janela móvel.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/rustyx-5.5.77.patch.bin",
+    "file_sha256": "AD012D8E9A576D1146BDDA231BD933F2FBAFB59422D424FDFDED61C0EFAF1379",
+    "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T06:28:00Z"
+    "released_at": "2026-08-07T06:38:00Z"
   }
 }
