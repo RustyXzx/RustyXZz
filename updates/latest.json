@@ -1,16 +1,16 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.71",
+  "base_version": "5.5.72",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.71",
-    "release_name": "Central de atualizações resiliente",
-    "release_notes": "• A central agora usa três fontes públicas de atualização, com fallback automático.\n• O sininho continua funcionando mesmo se uma das fontes estiver indisponível.\n• As notas da versão instalada ficam disponíveis localmente, sem depender da internet.\n• O botão VERIFICAR AGORA força consulta sem cache.\n• A Home permanece liberada para usuários FREE.\n• A janela continua móvel e redimensionável.",
+    "version": "5.5.72",
+    "release_name": "Correção de compilação do R21",
+    "release_notes": "• Corrigido o erro CS0246 relacionado ao tipo ScrollBar no instalador isolado.\n• O tipo foi qualificado explicitamente como System.Windows.Controls.Primitives.ScrollBar.\n• A janela continua móvel e redimensionável.\n• A Home permanece liberada para usuários FREE.\n• O sininho e a central de atualizações continuam ativos com fallback e verificação sem cache.",
     "package_type": "protected_release",
     "mandatory": false,
-    "released_at": "2026-08-07T04:45:00Z"
+    "released_at": "2026-08-07T04:55:00Z"
   }
 }
