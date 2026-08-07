@@ -9,10 +9,48 @@
     "version": "5.5.78",
     "release_name": "Login com Discord + perfil no painel",
     "release_notes": "• Adicionado login/conexão com Discord via OAuth2 usando o Application ID oficial do RustyX.\n• O perfil conectado aparece no canto inferior direito com nome, @usuário e avatar.\n• Avatares GIF do Discord são animados dentro do RustyX.\n• A sessão do Discord é protegida localmente pelo Windows e restaurada automaticamente enquanto válida.\n• O Discord identifica o usuário, mas o plano FREE/PRO continua sendo validado separadamente.\n• O login respeita o tema escuro e o canal resiliente de atualização/sininho permanece ativo.\n• Para ativar o OAuth no aplicativo Discord, registre o Redirect URI exato: http://127.0.0.1:47815/discord-callback/",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/6f935c371d34acc4e58f4962084351ea2144bf07/updates/packages/rustyx-5.5.78-r28.patch.bin",
+    "download_url": "",
     "file_sha256": "F171798D6EFD91F49D24D1ED66C829EEA5E04A6D98DC02913D015AE252825FBE",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T08:05:00Z"
+    "released_at": "2026-08-07T08:12:00Z",
+    "download_parts": [
+      {
+        "name": "part01.bin",
+        "url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/9d344108aef0bf1e2c9424b220d910ff4db68c30/updates/packages/5.5.78/part01.bin",
+        "sha256": "40DB5D317C00AC41BC1ED285FF2D44A454CA0932426918A414F0FC903B927651",
+        "size": 1694
+      },
+      {
+        "name": "part02.bin",
+        "url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/9d344108aef0bf1e2c9424b220d910ff4db68c30/updates/packages/5.5.78/part02.bin",
+        "sha256": "5E52796590A6D6A2288669378F100FCEA479E2783B4D1A7095B5640E9DC20E20",
+        "size": 1694
+      },
+      {
+        "name": "part03.bin",
+        "url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/9d344108aef0bf1e2c9424b220d910ff4db68c30/updates/packages/5.5.78/part03.bin",
+        "sha256": "CB47DA56FBDBFFDB79BF0F5AB9E69C4C0346C7DFB83C32B563FDF84E17667800",
+        "size": 1694
+      },
+      {
+        "name": "part04.bin",
+        "url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/9d344108aef0bf1e2c9424b220d910ff4db68c30/updates/packages/5.5.78/part04.bin",
+        "sha256": "BB491BED61CFAA79AFF9ECF41C6A1B3F583AC55B3BEA6638DEBDE6690CC0029F",
+        "size": 1694
+      },
+      {
+        "name": "part05.bin",
+        "url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/9d344108aef0bf1e2c9424b220d910ff4db68c30/updates/packages/5.5.78/part05.bin",
+        "sha256": "32411C1A951D8A75A481E9AF70DA9C0A8EBE80726DBC0F16F61F34308F2AD999",
+        "size": 1694
+      },
+      {
+        "name": "part06.bin",
+        "url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/9d344108aef0bf1e2c9424b220d910ff4db68c30/updates/packages/5.5.78/part06.bin",
+        "sha256": "8DBEE676D6877750001A02232D0F06AAF9AD00AB81F69BF2DF8F8B70AB4BD4EF",
+        "size": 1694
+      }
+    ]
   }
 }
