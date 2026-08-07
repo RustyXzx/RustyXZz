@@ -1,16 +1,16 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.70",
+  "base_version": "5.5.71",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.70",
-    "release_name": "Janela móvel e correções de usabilidade",
-    "release_notes": "• O painel agora pode ser movido com o mouse em áreas livres da interface.\n• O arraste continua bloqueado apenas em campos e controles interativos para não atrapalhar cliques.\n• A Home permanece liberada para usuários FREE.\n• O sininho continua fixo na barra lateral e mostra as novidades da versão instalada.\n• O canal oficial continua notificando novas versões automaticamente pelo sininho.",
+    "version": "5.5.71",
+    "release_name": "Central de atualizações resiliente",
+    "release_notes": "• A central agora usa três fontes públicas de atualização, com fallback automático.\n• O sininho continua funcionando mesmo se uma das fontes estiver indisponível.\n• As notas da versão instalada ficam disponíveis localmente, sem depender da internet.\n• O botão VERIFICAR AGORA força consulta sem cache.\n• A Home permanece liberada para usuários FREE.\n• A janela continua móvel e redimensionável.",
     "package_type": "protected_release",
     "mandatory": false,
-    "released_at": "2026-08-07T04:20:00Z"
+    "released_at": "2026-08-07T04:45:00Z"
   }
 }
