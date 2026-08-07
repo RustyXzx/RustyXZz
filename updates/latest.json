@@ -8,11 +8,11 @@
   "latest": {
     "version": "5.5.77",
     "release_name": "Login escuro + canal de atualização resiliente",
-    "release_notes": "• O login agora respeita totalmente o tema preto, incluindo fundo, card, campos, textos e logo.\n• No tema escuro, a animação clara do login é substituída pela marca RustyX própria para fundo preto.\n• A verificação de atualização usa backend + três fontes públicas, cache-bust, duas tentativas por fonte e cache local da última resposta válida.\n• A checagem ocorre imediatamente após o login e automaticamente a cada 1 minuto.\n• Se houver pacote seguro, a atualização automática continua ativa; em falha, o sininho permanece disponível para nova tentativa.\n• Mantidos Game Mode corrigido, atualizador reparado, Home FREE, contador da key e janela móvel.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/rustyx-5.5.77.patch.bin",
+    "release_notes": "• Corrigido o erro 404 no download da atualização: o pacote agora usa uma URL imutável presa ao commit publicado, em vez de depender da propagação do branch main.\n• O login respeita totalmente o tema preto, incluindo fundo, card, campos, textos e logo.\n• A verificação usa backend + três fontes públicas, cache-bust, duas tentativas por fonte e cache local da última resposta válida.\n• A checagem ocorre imediatamente após o login e automaticamente a cada 1 minuto.\n• Em falha de atualização, a versão atual é preservada e o sininho continua disponível para nova tentativa.\n• Mantidos Game Mode corrigido, atualizador reparado, Home FREE, contador da key e janela móvel.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/e04e98c542d57e85efd82d6aa10b5f4536903ce6/updates/packages/rustyx-5.5.77.patch.bin",
     "file_sha256": "AD012D8E9A576D1146BDDA231BD933F2FBAFB59422D424FDFDED61C0EFAF1379",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T06:38:00Z"
+    "released_at": "2026-08-07T06:55:00Z"
   }
 }
