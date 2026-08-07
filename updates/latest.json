@@ -1,16 +1,16 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.69",
+  "base_version": "5.5.70",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.69",
-    "release_name": "Correção do instalador R18 e central de atualizações",
-    "release_notes": "• Corrigida a validação de integridade do pacote protegido R18.\n• Corrigido o conflito de variável que impedia a compilação da central de atualizações.\n• Removida a dependência de ServiceController que quebrava o build em instalações isoladas.\n• A Home permanece liberada para usuários FREE.\n• O sininho continua fixo na barra lateral e exibe as novidades da versão instalada.\n• Novas versões publicadas no canal oficial continuam sendo detectadas automaticamente pelo sininho.",
+    "version": "5.5.70",
+    "release_name": "Janela móvel e correções de usabilidade",
+    "release_notes": "• O painel agora pode ser movido com o mouse em áreas livres da interface.\n• O arraste continua bloqueado apenas em campos e controles interativos para não atrapalhar cliques.\n• A Home permanece liberada para usuários FREE.\n• O sininho continua fixo na barra lateral e mostra as novidades da versão instalada.\n• O canal oficial continua notificando novas versões automaticamente pelo sininho.",
     "package_type": "protected_release",
     "mandatory": false,
-    "released_at": "2026-08-07T04:05:00Z"
+    "released_at": "2026-08-07T04:20:00Z"
   }
 }
