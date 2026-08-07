@@ -1,7 +1,7 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.73",
+  "base_version": "5.5.72",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
@@ -9,7 +9,9 @@
     "version": "5.5.73",
     "release_name": "Login automático da key e contador ao vivo",
     "release_notes": "• A key ativa é identificada e validada automaticamente ao abrir o RustyX.\n• Removido o botão ENTRAR COM ACESSO ATIVO do login.\n• O painel entra automaticamente assim que a key salva é confirmada.\n• O tempo restante da key é mostrado com contador ao vivo em horas, minutos e segundos.\n• Em falha temporária de rede, o RustyX preserva a key e tenta novamente automaticamente.\n• O sininho continua usando múltiplas fontes públicas sem cache para detectar novas versões.\n• Home FREE, janela móvel e redimensionamento permanecem ativos.",
-    "package_type": "protected_release",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/rustyx-5.5.73.patch.bin",
+    "file_sha256": "74F83BD8B43A8C28424449E2BB0C063994FEE0A5BB6F4913D49DD16B016E69AB",
+    "package_type": "source_patch",
     "mandatory": false,
     "released_at": "2026-08-07T05:05:00Z"
   }
