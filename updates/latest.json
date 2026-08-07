@@ -1,16 +1,16 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.72",
+  "base_version": "5.5.73",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.72",
-    "release_name": "Correção de compilação do R21",
-    "release_notes": "• Corrigido o erro CS0246 relacionado ao tipo ScrollBar no instalador isolado.\n• O tipo foi qualificado explicitamente como System.Windows.Controls.Primitives.ScrollBar.\n• A janela continua móvel e redimensionável.\n• A Home permanece liberada para usuários FREE.\n• O sininho e a central de atualizações continuam ativos com fallback e verificação sem cache.",
+    "version": "5.5.73",
+    "release_name": "Login automático da key e contador ao vivo",
+    "release_notes": "• A key ativa é identificada e validada automaticamente ao abrir o RustyX.\n• Removido o botão ENTRAR COM ACESSO ATIVO do login.\n• O painel entra automaticamente assim que a key salva é confirmada.\n• O tempo restante da key é mostrado com contador ao vivo em horas, minutos e segundos.\n• Em falha temporária de rede, o RustyX preserva a key e tenta novamente automaticamente.\n• O sininho continua usando múltiplas fontes públicas sem cache para detectar novas versões.\n• Home FREE, janela móvel e redimensionamento permanecem ativos.",
     "package_type": "protected_release",
     "mandatory": false,
-    "released_at": "2026-08-07T04:55:00Z"
+    "released_at": "2026-08-07T05:05:00Z"
   }
 }
