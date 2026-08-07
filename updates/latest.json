@@ -9,7 +9,7 @@
     "version": "5.5.86",
     "release_name": "Bordas reforçadas nos presets",
     "release_notes": "• Os botões Default, Optimal, Maximum e Refresh agora possuem bordas mais visíveis.\n• O visual permanece branco e clean.\n• Mantidos Discord, sininho, Home FREE e demais correções anteriores.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/a12ae487de8ff79c452f6b55fbbcbda579a93e51/updates/packages/rustyx-5.5.86.patch.bin",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/f1bc40f2784020f03bb584c8b0c8617015739881/updates/packages/rustyx-5.5.86.patch.bin",
     "file_sha256": "55D7188EC5F39B0B9F38BA0864FE24825AAD97E1817ACD0EA4B413B9B93C9424",
     "package_type": "source_patch",
     "mandatory": false,
