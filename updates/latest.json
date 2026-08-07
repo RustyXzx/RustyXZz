@@ -9,8 +9,8 @@
     "version": "5.5.90",
     "release_name": "Correção de compilação do atualizador visual",
     "release_notes": "• Corrigido o erro CS0103 da R39 no fluxo visual de atualização.\n• O card de atualização usa apenas controles existentes do painel e permanece visível até o atualizador externo assumir.\n• O PowerShell continua oculto e o atualizador externo permanece no tema branco.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/main/updates/packages/rustyx-5.5.90.patch.bin",
-    "file_sha256": "1573EFB26BB15B83695CB625BC35D940ABDB5473209A2D2160ECFBE805C614B5",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/a43e79046d774559e6a8e2f30be90894b7ea2e91/updates/packages/rustyx-5.5.90.patch.bin",
+    "file_sha256": "F2D1CD2FDF915E99FBA9947BD314AA8F86F88CA51C5FB8AE619E9D6864B64728",
     "package_type": "source_patch",
     "mandatory": false,
     "released_at": "2026-08-07T18:50:00-03:00"
