@@ -1,18 +1,18 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.81",
+  "base_version": "5.5.82",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.82",
-    "release_name": "Correção do login Discord OAuth",
-    "release_notes": "• Corrigido o erro INVALID no login com Discord.\n• O retorno OAuth agora usa o endereço desktop recomendado pelo Discord: http://127.0.0.1/callback.\n• O login pede apenas o escopo identify e mantém validação de state.\n• O painel permanece somente no tema branco.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/f9ae4b873627ee85d539975cbd60c75a92eb2642/updates/packages/rustyx-5.5.82.patch.bin",
-    "file_sha256": "2928587CC563542E9F0A66012FF6C2E3A97FB20241C13E4F4D8D74F82989E1A6",
+    "version": "5.5.83",
+    "release_name": "Discord automático sem pedir conta toda hora",
+    "release_notes": "• O RustyX agora reutiliza automaticamente a sessão Discord já salva e válida.\n• Removido o prompt de consentimento forçado que fazia a pessoa escolher/autorizar a conta repetidamente.\n• Se o Discord já estiver conectado, o botão de login some e o perfil é restaurado automaticamente.\n• Uma nova tela de login só aparece quando realmente não existe sessão válida do Discord.\n• O painel permanece somente no tema branco.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/149442c0e0bddbffc113d509f6d298a9fa49506f/updates/packages/rustyx-5.5.83.patch.bin",
+    "file_sha256": "9587C2AC0A4C88C1D6D34E635CB6FBB8EE6443C9F53C7363AA57A575812DD741",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T17:02:00-03:00"
+    "released_at": "2026-08-07T17:18:00-03:00"
   }
 }
