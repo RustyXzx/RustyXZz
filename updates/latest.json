@@ -9,7 +9,7 @@
     "version": "5.5.82",
     "release_name": "Correção do login Discord OAuth",
     "release_notes": "• Corrigido o erro INVALID no login com Discord.\n• O retorno OAuth agora usa o endereço desktop recomendado pelo Discord: http://127.0.0.1/callback.\n• O login pede apenas o escopo identify e mantém validação de state.\n• O painel permanece somente no tema branco.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/87abaa8ca647191243d06a12c336735fd27563f6/updates/packages/rustyx-5.5.82.patch.bin",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/f9ae4b873627ee85d539975cbd60c75a92eb2642/updates/packages/rustyx-5.5.82.patch.bin",
     "file_sha256": "2928587CC563542E9F0A66012FF6C2E3A97FB20241C13E4F4D8D74F82989E1A6",
     "package_type": "source_patch",
     "mandatory": false,
