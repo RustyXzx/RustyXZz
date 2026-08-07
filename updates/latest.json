@@ -1,18 +1,18 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.86",
+  "base_version": "5.5.65",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.90",
-    "release_name": "Correção de compilação do atualizador visual",
-    "release_notes": "• Corrigido o erro CS0103 da R39 no fluxo visual de atualização.\n• O card de atualização usa apenas controles existentes do painel e permanece visível até o atualizador externo assumir.\n• O PowerShell continua oculto e o atualizador externo permanece no tema branco.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/a43e79046d774559e6a8e2f30be90894b7ea2e91/updates/packages/rustyx-5.5.90.patch.bin",
-    "file_sha256": "F2D1CD2FDF915E99FBA9947BD314AA8F86F88CA51C5FB8AE619E9D6864B64728",
+    "version": "5.5.91",
+    "release_name": "Perfil Discord expandível + atualização universal",
+    "release_notes": "• O card do Discord continua pequeno e compacto.\n• Ao clicar no perfil, abre os detalhes da conta com Nitro, badges públicos e ações.\n• Ações: Abrir Discord, Atualizar perfil e Desvincular.\n• O patch desta versão é universal e não exige uma base_version exata, permitindo atualizar versões anteriores compatíveis.\n• Mantidos tema branco, sininho, Home FREE e correções anteriores.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/ef96ecf762901d47e6ad7c4efc84c0974eb8b15e/updates/packages/rustyx-5.5.91.patch.bin",
+    "file_sha256": "2E9C4A25DCDD1A0DF5CAF78C2961C79D6EAA72DB00690622D1E1142CB84C0F05",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T18:50:00-03:00"
+    "released_at": "2026-08-07T19:58:00-03:00"
   }
 }
