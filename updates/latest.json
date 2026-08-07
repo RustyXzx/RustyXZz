@@ -1,18 +1,18 @@
 {
   "ok": true,
   "channel": "stable",
-  "base_version": "5.5.76",
+  "base_version": "5.5.77",
   "has_update": true,
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.77",
-    "release_name": "Login escuro + canal de atualização resiliente",
-    "release_notes": "• Corrigido o erro 404 no download da atualização: o pacote agora usa uma URL imutável presa a um commit que contém o arquivo publicado.\n• O login respeita totalmente o tema preto, incluindo fundo, card, campos, textos e logo.\n• A verificação usa backend + três fontes públicas, cache-bust, duas tentativas por fonte e cache local da última resposta válida.\n• A checagem ocorre imediatamente após o login e automaticamente a cada 1 minuto.\n• Em falha de atualização, a versão atual é preservada e o sininho continua disponível para nova tentativa.\n• Mantidos Game Mode corrigido, atualizador reparado, Home FREE, contador da key e janela móvel.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/a7360f67c7279ffdc48e13f893349ed1b8fe83b0/updates/packages/rustyx-5.5.77.patch.bin",
-    "file_sha256": "AD012D8E9A576D1146BDDA231BD933F2FBAFB59422D424FDFDED61C0EFAF1379",
+    "version": "5.5.78",
+    "release_name": "Login com Discord + perfil no painel",
+    "release_notes": "• Adicionado login/conexão com Discord via OAuth2 usando o Application ID oficial do RustyX.\n• O perfil conectado aparece no canto inferior direito com nome, @usuário e avatar.\n• Avatares GIF do Discord são animados dentro do RustyX.\n• A sessão do Discord é protegida localmente pelo Windows e restaurada automaticamente enquanto válida.\n• O Discord identifica o usuário, mas o plano FREE/PRO continua sendo validado separadamente.\n• O login respeita o tema escuro e o canal resiliente de atualização/sininho permanece ativo.\n• Para ativar o OAuth no aplicativo Discord, registre o Redirect URI exato: http://127.0.0.1:47815/discord-callback/",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/432c22d3ec41441342fc796d90e8a57bd71a43ae/updates/packages/rustyx-5.5.78.patch.bin",
+    "file_sha256": "E3D3AA577B36CB37A02E0637B8386E1010C444C8A68FD23941187999AF4E038B",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T06:58:00Z"
+    "released_at": "2026-08-07T07:46:00Z"
   }
 }
