@@ -1,0 +1,5 @@
+RustyX 5.5.94
+- Corrigido o erro CS0103 da R43 causado pela referência inválida a probe.
+- A detecção da conta do Discord usa conexão isolada e não interfere no Rich Presence.
+- Foto e GIF do avatar são atualizados automaticamente; Atualizar perfil força leitura sem cache.
+- Patch universal para versões 5.5.65 ou superiores.
