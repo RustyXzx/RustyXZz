@@ -6,13 +6,13 @@
   "update_required": false,
   "minimum_app_version": "5.5.60",
   "latest": {
-    "version": "5.5.91",
-    "release_name": "Perfil Discord expandível + atualização universal",
-    "release_notes": "• O card do Discord continua pequeno e compacto.\n• Ao clicar no perfil, abre os detalhes da conta com Nitro, badges públicos e ações.\n• Ações: Abrir Discord, Atualizar perfil e Desvincular.\n• O patch desta versão é universal e não exige uma base_version exata, permitindo atualizar versões anteriores compatíveis.\n• Mantidos tema branco, sininho, Home FREE e correções anteriores.",
-    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/ef96ecf762901d47e6ad7c4efc84c0974eb8b15e/updates/packages/rustyx-5.5.91.patch.bin",
-    "file_sha256": "2E9C4A25DCDD1A0DF5CAF78C2961C79D6EAA72DB00690622D1E1142CB84C0F05",
+    "version": "5.5.94",
+    "release_name": "Correção do Discord + avatar/GIF atualizado",
+    "release_notes": "• Corrigido o erro CS0103 da R43 causado pela referência inválida a probe.\n• A detecção da conta do Discord agora usa uma conexão de consulta isolada e não interfere no Rich Presence.\n• Foto e GIF do avatar são atualizados automaticamente, e Atualizar perfil força nova leitura sem cache.\n• O patch é universal para versões compatíveis a partir da 5.5.65.",
+    "download_url": "https://raw.githubusercontent.com/RustyXzx/RustyXZz/c297380305f90eaa6431e2d3fa50c2eaca88b38a/updates/packages/rustyx-5.5.94.patch.bin",
+    "file_sha256": "8BCB9B9F2EF04255A6BAFACBDAB8A4330F691B765A80DB10B89DE3E3595A9FFE",
     "package_type": "source_patch",
     "mandatory": false,
-    "released_at": "2026-08-07T19:58:00-03:00"
+    "released_at": "2026-08-07T21:03:00-03:00"
   }
 }
